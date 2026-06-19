@@ -28,6 +28,7 @@
 ## Existing Working Area
 
 既存の `docs/` は、役職別メモと詳細テンプレートの作業領域として引き続き使えます。
+公開向けの最初の顔は `site/` に置いています。
 
 ## Initial Venture Thesis
 
