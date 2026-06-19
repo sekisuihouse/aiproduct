@@ -89,14 +89,27 @@ def build_body(row: dict[str, str], campaign_id: str) -> str:
     greeting = f"{contact_name}様" if contact_name else "ご担当者様"
     company_name = row.get("company_name", "").strip()
     title = row.get("title", "").strip()
+    website = row.get("website", "").strip()
     context = f"{company_name}の{title}" if title else f"{company_name}のご担当領域"
+    next_action = row.get("next_action", "").strip()
+    action_line = next_action if next_action and "campaign-" not in next_action else ""
+    action_sentence = action_line or "15分だけ現状の運用を伺い、どこで時間が落ちているか整理します"
+    website_observation = (
+        f"拝見した {website} の公開情報から、問い合わせ導線、提案準備、引き継ぎのどこに負荷が出やすいかはかなり見えました。"
+        if website
+        else "公開情報から見ても、問い合わせ導線、提案準備、引き継ぎのどこに負荷が出やすいかはかなり見えます。"
+    )
     lines = [
         greeting,
         "",
         "突然のご連絡失礼します。",
+        website_observation,
         campaign.opening,
         campaign.value,
         f"{context}の観点で、{campaign.cta}",
+        f"もし現場感に近ければ、{company_name} の実際のフローを見ながら、{action_sentence}。",
+        "必要であれば、こちらで1本分の業務フローを図にして返します。",
+        "返信は、いま一番詰まっている業務名だけでも十分です。",
         "",
         campaign.closing,
     ]
