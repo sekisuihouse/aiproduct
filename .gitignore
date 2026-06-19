@@ -7,3 +7,5 @@ __pycache__/
 .env
 .env.*
 !.env.example
+07_sales_cs/outreach/leads.csv
+07_sales_cs/outreach/send-log.md
