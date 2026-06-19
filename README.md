@@ -1,6 +1,6 @@
 # Startup Workspace
 
-このリポジトリは、アイデアの収集から意思決定、開発、販売、運用、保管までを全部残すための作業場です。
+このリポジトリは、`ranzaku` の会社づくりを進める作業場です。
 
 ## Canonical Structure
 
@@ -29,6 +29,11 @@
 
 既存の `docs/` は、役職別メモと詳細テンプレートの作業領域として引き続き使えます。
 公開向けの最初の顔は `site/` に置いています。
+
+## Company Identity
+
+会社名: `ranzaku`
+プロダクト名: `HomeFlow AI`
 
 ## Initial Venture Thesis
 

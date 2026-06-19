@@ -10,4 +10,4 @@
 - `SMTP_USER`
 - `SMTP_PASS`
 - `FROM_ADDR`
-
+- `FROM_NAME`

@@ -17,9 +17,10 @@ def main():
     smtp_user = os.environ["SMTP_USER"]
     smtp_pass = os.environ["SMTP_PASS"]
     from_addr = os.environ.get("FROM_ADDR", smtp_user)
+    from_name = os.environ.get("FROM_NAME", "Ranzaku")
 
     message = EmailMessage()
-    message["From"] = from_addr
+    message["From"] = f"{from_name} <{from_addr}>"
     message["To"] = args.to
     message["Subject"] = args.subject
     message.set_content(args.body)
@@ -32,4 +33,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

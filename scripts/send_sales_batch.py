@@ -8,12 +8,13 @@ from pathlib import Path
 
 def build_body(company_name: str, contact_name: str, title: str) -> str:
     greeting = f"{contact_name}様" if contact_name else "ご担当者様"
+    context = f"{title}" if title else "ご担当領域"
     return f"""{greeting}
 
 突然のご連絡失礼します。
 住宅・建設・リフォームの現場では、提案作成、顧客対応、引き継ぎにかなりの手作業が残っていることが多いと感じています。
-私たちは、その業務をAIで標準化する取り組みを進めています。
-{company_name}様の{title}の観点で、もし関心があれば15分だけ現状の運用を伺えればと思っています。
+私たちranzakuは、その業務をAIで標準化する取り組みを進めています。
+{company_name}様の{context}の観点で、もし関心があれば15分だけ現状の運用を伺えればと思っています。
 """
 
 
@@ -23,9 +24,10 @@ def send_message(to_addr: str, subject: str, body: str) -> None:
     smtp_user = os.environ["SMTP_USER"]
     smtp_pass = os.environ["SMTP_PASS"]
     from_addr = os.environ.get("FROM_ADDR", smtp_user)
+    from_name = os.environ.get("FROM_NAME", "Ranzaku")
 
     message = EmailMessage()
-    message["From"] = from_addr
+    message["From"] = f"{from_name} <{from_addr}>"
     message["To"] = to_addr
     message["Subject"] = subject
     message.set_content(body)
@@ -59,4 +61,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
