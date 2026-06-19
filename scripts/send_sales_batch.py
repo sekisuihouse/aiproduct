@@ -39,9 +39,9 @@ def send_message(to_addr: str, subject: str, body: str) -> None:
 
 
 def main():
-    leads_path = Path("07_sales_cs/outreach/leads.csv")
+    leads_path = Path(os.environ.get("LEADS_PATH", "07_sales_cs/outreach/leads.private.csv"))
     if not leads_path.exists():
-        raise SystemExit("Missing 07_sales_cs/outreach/leads.csv")
+        raise SystemExit(f"Missing {leads_path}")
 
     with leads_path.open(newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
