@@ -16,6 +16,7 @@
 - `09_experiments/` 仮説検証。実験、結果、学び、失敗ログ
 - `10_assets/` 共有資産。ピッチ、画像、ブランド素材、配布物
 - `99_archive/` 完了・廃止・旧版の退避先
+- `ops-dashboard/` 内部経営ダッシュボード
 
 ## Writing Rules
 

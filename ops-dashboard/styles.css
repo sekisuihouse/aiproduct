@@ -1,0 +1,139 @@
+:root {
+  color-scheme: dark;
+  --bg: #070b12;
+  --panel: #0f1622;
+  --card: #121c2b;
+  --line: rgba(255, 255, 255, 0.08);
+  --text: #f2efe8;
+  --muted: #9ba7b4;
+  --accent: #8dd3ff;
+  --accent-2: #ffcb77;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(141, 211, 255, 0.12), transparent 30%),
+    radial-gradient(circle at 80% 10%, rgba(255, 203, 119, 0.12), transparent 28%),
+    var(--bg);
+  color: var(--text);
+  font-family: Georgia, serif;
+}
+
+.wrap {
+  width: min(1160px, calc(100vw - 40px));
+  margin: 0 auto;
+  padding: 40px 0 72px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.7fr 0.8fr;
+  gap: 20px;
+  align-items: end;
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-size: 12px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.8rem, 8vw, 6rem);
+  line-height: 0.95;
+}
+
+.lede,
+p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.hero-card,
+.card,
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  backdrop-filter: blur(10px);
+}
+
+.hero-card {
+  padding: 22px;
+  background: linear-gradient(135deg, rgba(255,203,119,0.14), rgba(141,211,255,0.12));
+}
+
+.hero-card span,
+.panel-head span {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 11px;
+  color: var(--accent);
+}
+
+.hero-card strong {
+  display: block;
+  margin-top: 12px;
+  font-size: 2.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.card {
+  padding: 20px;
+}
+
+.card.accent {
+  background: linear-gradient(135deg, rgba(255,203,119,0.10), rgba(255,255,255,0.02));
+}
+
+.panel {
+  padding: 18px;
+}
+
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 14px 10px;
+  border-top: 1px solid var(--line);
+}
+
+th {
+  color: var(--accent-2);
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
